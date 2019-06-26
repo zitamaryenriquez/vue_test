@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://dl3.pushbulletusercontent.com/dio6hfGSL0KJXCUnrNYzhHwrsnxxdius/sample%20grid.html -->
+<html lang="en" class="gr__dl3_pushbulletusercontent_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>sample css grid placement</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 70px 1fr 30px;
+            grid-template-areas:
+            'header header'
+            'menu content'
+            'footer footer';
+
+        }
+
+        .menu {
+            grid-area: menu;
+            background-color: blue
+        }
+
+        .header {
+            grid-area: header;
+            background-color: red
+        }
+
+        .content {
+            grid-area: content;
+            background-color: green;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+    <div class="container">
+        <div class="menu"></div>
+        <div class="header"></div>
+        <div class="content"></div>
+        <div class="footer"></div>
+    </div>
+
+
+</body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

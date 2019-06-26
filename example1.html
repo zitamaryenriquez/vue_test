@@ -1,0 +1,23 @@
+<head>
+    <title>Vue.js Examples</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- String interpolation -->
+    <div style="padding-bottom: 50px;" id="app">
+        {{ message }}
+    </div>
+
+    <a href="index.html">Go back</a>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello fellow Vue learners!'
+            }
+        })
+    </script>
+
+</body>

@@ -1,0 +1,36 @@
+<head>
+    <title>Vue.js Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>{{ title }} </h2>
+        <ul>
+            <li v-for="house in houses"> 
+                {{ house.name }} - 
+                <input type="number" v-model.number="house.points"/> 
+                <button v-on:click="house.points += 5">
+                    Add 5
+                </button> 
+                <span v-if="house.points >= 500"><strong>WINNER!</strong></span>
+            </li>
+        </ul>
+        <a href="index.html">Go back</a>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                title: "Hogwarts",
+                houses: 1
+            },
+            created () {
+                fetch('http://localhost:3000/houses')
+                    .then(response => response.json())
+                    .then(json => this.houses = json.houses)
+            }
+        })
+    </script>
+
+</body>

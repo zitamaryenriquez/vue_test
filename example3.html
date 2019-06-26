@@ -1,0 +1,33 @@
+<head>
+    <title>Vue.js Examples</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <app-nav 
+            v-for="nav in navList"
+            v-bind:nav="nav"
+            v-bind:key="nav.page">
+        </app-nav>
+    </div>
+
+    <script>
+        // Define a new component called app-nav
+        Vue.component('app-nav', {
+            props: ['nav'],
+            template: '<span style="padding:20px"><a v-bind:href="nav.href">{{ nav.page }}</a></span>'
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                navList: [
+                { page: 'Home', href: 'index.html'},
+                { page: 'String interpolation', href: 'example1.html'},
+                { page: 'Loop and other stuff', href: 'example2.html'}
+                ]
+            }
+        })
+    </script>
+
+</body>
